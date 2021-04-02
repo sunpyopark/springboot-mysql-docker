@@ -21,12 +21,12 @@ node {
 	/**
 	stage('Maven Install'){
 	   // sh "echo 'aaaa'"
-           sh "mvn install -f /var/lib/jenkins/workspace/springboot-k8s-mysql/spring-boot-mysql-docker/pom.xml"
+           sh "mvn install -f /var/lib/jenkins/workspace/springboot-k8s-mysql/spring-boot-mysql-docker/pom.xml -Dmaven.test.skip=true"
         }
 	**/
 	stage('Maven Package'){
 	   // sh "echo 'aaaa'"
-           sh "mvn package -f /var/lib/jenkins/workspace/springboot-k8s-mysql/spring-boot-mysql-docker/pom.xml"
+           sh "mvn package -f /var/lib/jenkins/workspace/springboot-k8s-mysql/spring-boot-mysql-docker/pom.xml -Dmaven.test.skip=true"
         }
 
         stage('Building image') {
